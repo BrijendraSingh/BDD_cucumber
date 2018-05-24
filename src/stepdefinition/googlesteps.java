@@ -6,18 +6,17 @@ import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import page.GooglePage;
+import utils.GenericUtils;
 
-public class googlesteps {
+public class googlesteps extends GenericUtils{
 	@Given("^I launch the google news$")
 	public void i_launch_the_google_news() throws Throwable {
-	   System.out.println("Goole is launched");
-	   new GooglePage().writescenario();
+	   new GooglePage().launchApp("https://www.news.google.com");
 	}
 
 	@Then("^I read the googles news headlines$")
 	public void i_read_the_googles_news_headlines() throws Throwable {
-	    System.out.println("Goole news is read");
-	    new GooglePage().writescenario();
-	    assertTrue(false);
+	   new GooglePage().readNewsHeadlines(); 
+	    
 	}
 }
