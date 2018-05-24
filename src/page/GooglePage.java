@@ -21,24 +21,17 @@ public class GooglePage extends GenericUtils{
 		PageFactory.initElements(driver, this);
 	}
 	
-	public void writescenario(String text) {
-		
-		System.out.println(text);
-		scenario.write(text);
-		
-	}
-	
 	public void launchApp(String url) {
 		driver.navigate().to(url);
-		scenario.write("Application launched: " + url);
+		report("Application launched: " + url);
 	}
 	
 	public void readNewsHeadlines() {
 		int c=0;
-		writescenario("Total result: " + results.size());
+		report("Total result: " + results.size());
 		for (WebElement ele: results){
 			if (!ele.getText().isEmpty()) {
-				writescenario(c+" --> " + ele.getText());
+				report(c+" --> " + ele.getText());
 			c++;
 			}
 		}

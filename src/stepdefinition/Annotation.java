@@ -13,7 +13,6 @@ public class Annotation extends GenericUtils{
 	@Before
 	public void setup(Scenario scenario) {
 		scenario1= scenario;
-		//scenario.write("this is my message");
 		System.out.println("Scenario Name:: " + scenario.getName());
 		System.out.println("Scenario Tags:: " + scenario.getSourceTagNames());
 		driver =setWebdriver();
@@ -22,9 +21,10 @@ public class Annotation extends GenericUtils{
 	@After
 	public void tearDown(Scenario scenario) {
 		System.out.println("Scenario status:: " + scenario.getStatus());
-		scenario.write("jndjhasjdasd jsdjsa");
+		report("Execution End");
 		if (driver!=null) {
 			driver.close();
+			report("**Browser Closed**");
 		}
 	}
 
