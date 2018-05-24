@@ -1,5 +1,7 @@
 package stepdefinition;
 
+import static org.junit.Assert.assertTrue;
+
 import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -16,5 +18,6 @@ public class googlesteps {
 	public void i_read_the_googles_news_headlines() throws Throwable {
 	    System.out.println("Goole news is read");
 	    new GooglePage().writescenario();
+	    assertTrue(false);
 	}
 }
