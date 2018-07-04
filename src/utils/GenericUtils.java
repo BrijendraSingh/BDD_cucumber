@@ -24,6 +24,7 @@ public class GenericUtils {
 	
 	public void report(String text) {
 		scenario.write(text);
+		//
 	}
 
 }
